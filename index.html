@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <nav>
+        <ul>
+            <li><a href="#clock">Clock</a></li>
+            <li><a href="#alarm">Alarm</a></li>
+            <li><a href="#stopwatch">Stopwatch</a></li>
+            <li><a href="#countdown">Countdown</a></li>
+            <li><a href="#theme">Theme</a></li>
+        </ul>
+    </nav> -->
+    <div class="container">
+        <section id="clock">
+            <h1>Digital Clock</h1>
+            <div class="clock">
+                <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                <span id="ampm">AM</span>
+            </div>
+            <div id="date"></div>
+        </section>
+        
+        <section id="alarm">
+            <h2>Alarm</h2>
+            <input type="time" id="alarmTime">
+            <button onclick="setAlarm()">Set Alarm</button>
+            <button onclick="clearAlarm()">Clear Alarm</button>
+        </section>
+        
+        <section id="stopwatch">
+            <h2>Stopwatch</h2>
+            <div id="stopwatchDisplay">00:00:00</div>
+            <button onclick="startStopwatch()">Start</button>
+            <button onclick="pauseStopwatch()">Pause</button>
+            <button onclick="resetStopwatch()">Reset</button>
+        </section>
+        
+        <section id="countdown">
+            <h2>Countdown Timer</h2>
+            <input type="number" id="countdownInput" placeholder="Enter seconds">
+            <button onclick="startCountdown()">Start</button>
+            <div id="countdownDisplay"></div>
+        </section>
+        
+        <section id="theme">
+            <h2>Theme</h2>
+            <select id="themeSelector" onchange="changeTheme()">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="neon">Neon</option>
+                <option value="custom">Custom</option>
+            </select>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
