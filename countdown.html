@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="light">
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Clock</a>
+            <a href="alarm.html">Alarm</a>
+            <a href="stopwatch.html">Stopwatch</a>
+            <a href="countdown.html" class="active">Countdown</a>
+        </div>
+        <div class="theme-switcher">
+            <select id="themeSelect">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="neon">Neon</option>
+                <option value="custom">Custom</option>
+            </select>
+            <input type="color" id="customColor" style="display: none;" />
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="countdown-section card">
+            <h2>Countdown Timer</h2>
+            <div class="input-group">
+                <input type="number" id="countdownMinutes" placeholder="Minutes" min="0" />
+                <input type="number" id="countdownSeconds" placeholder="Seconds" min="0" max="59" />
+            </div>
+            <button id="startCountdown">Start</button>
+            <div id="countdown">00:00</div>
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="countdown.js"></script>
+</body>
+</html>

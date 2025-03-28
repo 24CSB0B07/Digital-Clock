@@ -1,0 +1,402 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #ff6b6b;
+    --text-color: #333;
+    --background-color: #f5f7fa;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --border-radius: 15px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.light {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text-color);
+}
+
+body.dark {
+    background: linear-gradient(135deg, #1e1e1e 0%, #434343 100%);
+    color: #e0e0e0;
+}
+
+body.neon {
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+}
+
+body.custom {
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.9); 
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#themeSelect {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#themeSelect option {
+    background: #333;
+    color: #fff;
+}
+
+#customColor {
+    padding: 0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.clock-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.clock {
+    font-size: 4.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+#time::after {
+    content: ':';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#ampm {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+#date {
+    font-size: 1.3rem;
+    color: #666;
+    font-weight: 300;
+}
+
+.alarm-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+#alarmTime {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.5);
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+#alarmTime:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    margin: 5px;
+}
+
+button {
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7);
+    color: #333;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15), -5px -5px 20px rgba(255, 255, 255, 0.9);
+}
+
+button:active {
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.1), inset -5px -5px 15px rgba(255, 255, 255, 0.7);
+}
+
+#setAlarm {
+    background: linear-gradient(145deg, #ff6b6b, #ff8787);
+    color: #fff;
+}
+
+#snoozeAlarm {
+    background: linear-gradient(145deg, #ff9100, #ffb347);
+    color: #fff;
+}
+
+#snoozeAlarm:disabled {
+    background: linear-gradient(145deg, #ccc, #e0e0e0);
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#startStopwatch {
+    background: linear-gradient(145deg, #00e676, #4caf50);
+    color: #fff;
+}
+
+#pauseStopwatch {
+    background: linear-gradient(145deg, #ffea00, #ffee58);
+    color: #333;
+}
+
+#resetStopwatch {
+    background: linear-gradient(145deg, #d81b60, #f06292);
+    color: #fff;
+}
+
+#startCountdown {
+    background: linear-gradient(145deg, #3d5afe, #7986cb);
+    color: #fff;
+}
+
+#alarmList {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+#alarmList div {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#alarmList button {
+    background: linear-gradient(145deg, #e91e63, #f06292);
+    color: #fff;
+    padding: 8px 15px;
+}
+
+.alarm-active {
+    animation: shake 0.5s infinite;
+    color: #ff4444;
+    text-shadow: 0 0 10px #ff4444;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.stopwatch-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+#stopwatch {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #00e676;
+    font-weight: 500;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.countdown-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center; 
+}
+
+#countdownMinutes, #countdownSeconds {
+    padding: 10px;
+    font-size: 1rem;
+    width: 120px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.5);
+    transition: var(--transition);
+}
+
+#countdownMinutes:focus, #countdownSeconds:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+#countdown {
+    font-size: 3rem;
+    margin: 20px 0;
+    color: #3d5afe;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#progress {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff1744, #ff6b6b);
+    transition: width 1s linear;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .clock {
+        font-size: 3rem;
+    }
+
+    #ampm {
+        font-size: 1.5rem;
+    }
+
+    #stopwatch, #countdown {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
